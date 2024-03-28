@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="clock.css" />
+    <title>Clock</title>
+  </head>
+  <body>
+    <div class="clock">
+      <div class="hour">
+        <div class="hr" id="hr"></div>
+      </div>
+      <div class="min">
+        <div class="mn" id="mn"></div>
+      </div>
+      <div class="sec">
+        <div class="sc" id="sc"></div>
+      </div>
+    </div>
+    <div class="text">
+      <p id="mounth">hello world</p>
+      <p id="wd">earth</p>
+    </div>
+    <script type="text/javascript">
+      let deg = 6;
+      let mounths = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+      let weakDays = [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ];
+      let hr = document.getElementById("hr");
+      let mn = document.getElementById("mn");
+      let sc = document.getElementById("sc");
+      let mp = document.getElementById("mounth");
+      let wd = document.getElementById("wd");
+
+      setInterval(() => {
+        let day = new Date();
+        let hh = day.getHours() * 30;
+        let mm = day.getMinutes() * deg;
+        let ss = day.getSeconds() * deg;
+
+        hr.style.transform = "rotateZ( " + (hh + mm / 12) + "deg)";
+        mn.style.transform = "rotateZ(" + mm + "deg)";
+        sc.style.transform = "rotateZ(" + ss + "deg)";
+
+        mp.innerHTML = weakDays[day.getDay() - 1];
+        wd.innerHTML = day.getDate() + " " + mounths[day.getMonth()];
+      });
+    </script>
+  </body>
+</html>

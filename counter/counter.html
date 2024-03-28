@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+    <link rel="stylesheet" type="text/css" href="counter.css" />
+  </head>
+  <body>
+    <div class="container">
+      <table border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr>
+          <td align="center"><h1>Counter</h1></td>
+        </tr>
+        <tr>
+          <td align="center"><p>0</p></td>
+        </tr>
+        <tr>
+          <td align="center">
+            <button onclick="increse()">Increse</button>
+            <button onclick="dcrs()">Decrese</button>
+            <button onclick="reset()">Reset</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <script type="text/javascript">
+      let number = document.querySelector("p");
+      let count = 0;
+
+      function set() {
+        number.innerHTML = count;
+        if (count < 0) {
+          number.classList.add("red");
+        } else {
+          number.classList.remove("red");
+        }
+      }
+
+      function increse() {
+        count++;
+        set();
+      }
+
+      function dcrs() {
+        count--;
+        set();
+      }
+
+      function reset() {
+        count = 0;
+        set();
+      }
+
+      const pi = 3.14;
+    </script>
+  </body>
+</html>

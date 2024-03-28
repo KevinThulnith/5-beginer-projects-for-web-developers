@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui;
+  box-sizing: border-box;
+  background: #d2e8e7;
+}
+form {
+  background: rgb(255, 252, 252);
+  display: flex;
+  height: 60px;
+  box-shadow: 2px 2px 5px #f29393;
+}
+form .option {
+  background: rgb(255, 255, 255);
+  width: 50%;
+  text-align: center;
+  line-height: 50px;
+}
+form .option button {
+  color: rgb(167, 167, 180);
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  margin-top: 16px;
+}
+form .option .blue {
+  color: #4f1ed6;
+}
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.banner {
+  background: #333;
+  font-size: 45px;
+  height: 120px;
+  width: 820px;
+  line-height: 110px;
+  color: #e1f5f4;
+  border-radius: 30px;
+  margin: 54px 0px;
+  padding: 0px 15px;
+}
+.container button {
+  height: 60px;
+  width: 160px;
+  border: 3px solid #333;
+  border-radius: 32px;
+  font-size: 22px;
+  background: transparent;
+  color: #333;
+  cursor: pointer;
+}
+.container button:active {
+  background: #333;
+  color: #fff;
+}

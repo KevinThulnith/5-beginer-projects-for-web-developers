@@ -1,0 +1,46 @@
+body {
+  background: linear-gradient(120deg, #c0e2e3, #c8c8d0);
+  padding: 0;
+  margin: 0;
+  font-family: system-ui;
+  min-height: 100vh;
+}
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 9px 9px 18px #079492, -9px -9px 18px #e5efef;
+  width: 500px;
+  height: 412px;
+  border-radius: 30px;
+}
+.container h1 {
+  color: #6834af;
+  font-size: 56px;
+  font-weight: 450;
+  margin-bottom: 4px;
+}
+.container p {
+  color: #7c44a5;
+  font-size: 98px;
+  margin: 35px 45px;
+}
+.container button {
+  background: none;
+  height: 40px;
+  width: 120px;
+  margin: 3px 10px;
+  border: 3px solid #8d3edd;
+  font-size: 20px;
+  border-radius: 20px;
+  color: #8d3edd;
+  font-weight: bold;
+}
+.container .red {
+  color: red;
+}
+.container button:active {
+  background: #8d3edd;
+  color: #c0e2e3;
+}

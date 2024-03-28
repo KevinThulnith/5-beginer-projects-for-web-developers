@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui;
+  background: linear-gradient(90deg, #b6aede, #5700ff, #190d74);
+  height: 100vh;
+  overflow-y: scroll;
+}
+body::-webkit-scrollbar {
+  background: #190d74;
+  width: 7px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgb(221, 16, 16);
+  border-radius: 5px;
+}
+h1 {
+  color: rgb(223, 211, 211);
+  margin-left: 45px;
+  font-size: 35px;
+}
+.input {
+  background: #dce2d3;
+  padding: 30px;
+  width: 600px;
+  margin-left: 45px;
+  border-radius: 20px;
+}
+.input header {
+  color: blue;
+  font-size: 27px;
+}
+.input input {
+  border: none;
+  background: none;
+  border-bottom: 3px solid #5700ff;
+  width: 300px;
+  font-size: 23px;
+  margin: 20px 30px;
+  color: rgb(33, 122, 204);
+  outline: none;    
+}
+.input button {
+  padding: 10px 30px;
+  border: 1px solid;
+  background: #254dd1;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9f4fb;
+  cursor: pointer;
+}
+.list {
+  margin: 30px 3%;
+}
+.list-item {
+  background: #cee2df;
+  width: 600px;
+  margin: 20px 10px;
+  border-radius: 30px;
+  padding: 10px 0px;
+  display: inline-block;
+}
+.list-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 17px 18px 10px 20px;
+  accent-color:#9292cc;    
+}
+.list-item label {
+  color: #5119e6;
+  font-size: 26px;
+  text-transform: capitalize;
+  cursor: pointer;
+  width: 600px;
+}
+.list-item input:checked ~ label {
+  text-decoration: line-through;
+  color: #ff0000;
+}

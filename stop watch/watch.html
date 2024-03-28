@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stop Watch</title>
+    <link rel="stylesheet" type="text/css" href="watch.css" />
+  </head>
+  <body>
+    <div class="cont">
+      <h1>Stop Watch</h1>
+      <div class="display">
+        <p>
+          <span id="hr">00</span> : <span id="mn">00</span> :
+          <span id="sc">00</span> :
+          <span id="ms">00</span>
+        </p>
+      </div>
+      <div class="buttons">
+        <button id="bt1">Start</button>
+        <button id="bt2">Pause</button>
+        <button id="bt3">Reset</button>
+      </div>
+    </div>
+    <script>
+      let bt1 = document.getElementById("bt1");
+      let bt2 = document.getElementById("bt2");
+      let bt3 = document.getElementById("bt3");
+      let lbl1 = document.getElementById("hr");
+      let lbl2 = document.getElementById("mn");
+      let lbl3 = document.getElementById("sc");
+      let lbl4 = document.getElementById("ms");
+
+      let hour = 00;
+      let mins = 00;
+      let secs = 00;
+      let coun = 00;
+
+      bt1.addEventListener("click", function () {
+        bt1.disabled = true;
+        timer = true;
+        stopwatch();
+      });
+
+      bt2.addEventListener("click", function () {
+        bt1.innerHTML = "Resume";
+        bt1.disabled = false;
+        timer = false;
+      });
+
+      bt3.addEventListener("click", function () {
+        bt1.disabled = false;
+        bt1.innerHTML = "Start";
+        timer = false;
+        hour = 0;
+        mins = 0;
+        secs = 0;
+        coun = 0;
+        lbl1.innerHTML = "00";
+        lbl2.innerHTML = "00";
+        lbl3.innerHTML = "00";
+        lbl4.innerHTML = "00";
+      });
+
+      function stopwatch() {
+        if (timer) {
+          coun++;
+          if (coun == 100) {
+            secs++;
+            coun = 0;
+          }
+          if (secs == 60) {
+            mins++;
+            secs = 0;
+          }
+          if (mins == 60) {
+            hour++;
+            mins = 0;
+            secs = 0;
+          }
+
+          let hrstr = hour;
+          let mnstr = mins;
+          let scstr = secs;
+          let cnstr = coun;
+
+          if (hour < 10) {
+            hrstr = "0" + hrstr;
+          }
+          if (mins < 10) {
+            mnstr = "0" + mnstr;
+          }
+          if (secs < 10) {
+            scstr = "0" + scstr;
+          }
+          if (coun < 10) {
+            cnstr = "0" + cnstr;
+          }
+
+          lbl1.innerHTML = hrstr;
+          lbl2.innerHTML = mnstr;
+          lbl3.innerHTML = scstr;
+          lbl4.innerHTML = cnstr;
+
+          setTimeout(stopwatch, 10);
+        }
+      }
+    </script>
+  </body>
+</html>
